@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const dataController = require('../controllers/dataController');
-const requireAuth = require('../middleware/auth');
 
-// Apply auth middleware to all routes
-router.use(requireAuth);
+// Authentication middleware removed for full access
+// const requireAuth = require('../middleware/auth');
+// router.use(requireAuth);
 
 router.post('/data', dataController.createData);
 router.get('/data', dataController.getLast50Records);
